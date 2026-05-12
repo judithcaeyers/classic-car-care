@@ -37,32 +37,32 @@
 
 :root {
   --radius: 0.25rem;
-  /* DRS Classics brand — deep blue #0c203d, gold #e8d282, white #ffffff */
-  --background: oklch(0.18 0.05 260);        /* #0c203d deep blue */
-  --foreground: oklch(0.99 0 0);             /* white */
-  --card: oklch(0.23 0.05 260);
-  --card-foreground: oklch(0.99 0 0);
-  --popover: oklch(0.23 0.05 260);
-  --popover-foreground: oklch(0.99 0 0);
+  /* DRS Classics — deep navy #0c203d, gold #e8d282, white. Donker & filmisch. */
+  --background: oklch(0.13 0.04 260);        /* darker than #0c203d for cinematic depth */
+  --foreground: oklch(0.98 0.005 250);       /* near-white */
+  --card: oklch(0.17 0.045 260);
+  --card-foreground: oklch(0.98 0.005 250);
+  --popover: oklch(0.17 0.045 260);
+  --popover-foreground: oklch(0.98 0.005 250);
   --primary: oklch(0.86 0.09 90);            /* #e8d282 gold */
-  --primary-foreground: oklch(0.18 0.05 260);
-  --secondary: oklch(0.28 0.05 260);
-  --secondary-foreground: oklch(0.99 0 0);
-  --muted: oklch(0.26 0.04 260);
-  --muted-foreground: oklch(0.78 0.03 250);
-  --accent: oklch(0.86 0.09 90);             /* gold accent */
-  --accent-foreground: oklch(0.18 0.05 260);
+  --primary-foreground: oklch(0.13 0.04 260);
+  --secondary: oklch(0.22 0.045 260);
+  --secondary-foreground: oklch(0.98 0.005 250);
+  --muted: oklch(0.20 0.04 260);
+  --muted-foreground: oklch(0.72 0.025 250);
+  --accent: oklch(0.86 0.09 90);
+  --accent-foreground: oklch(0.13 0.04 260);
   --destructive: oklch(0.55 0.22 27);
-  --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.45 0.05 250 / 50%);
-  --input: oklch(0.32 0.05 260);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.40 0.05 250 / 45%);
+  --input: oklch(0.28 0.045 260);
   --ring: oklch(0.86 0.09 90);
-  --brass: oklch(0.86 0.09 90);              /* gold (kept token name for compat) */
-  --cream: oklch(0.99 0 0);                  /* white */
+  --brass: oklch(0.86 0.09 90);              /* gold */
+  --cream: oklch(0.98 0.005 250);            /* white */
 
-  --gradient-vignette: radial-gradient(ellipse at 50% 0%, oklch(0.28 0.06 260 / 60%), transparent 70%);
-  --gradient-fade: linear-gradient(180deg, transparent, oklch(0.18 0.05 260) 95%);
-  --shadow-elegant: 0 30px 80px -20px oklch(0 0 0 / 60%);
+  --gradient-vignette: radial-gradient(ellipse at 50% 0%, oklch(0.22 0.05 260 / 60%), transparent 70%);
+  --gradient-fade: linear-gradient(180deg, transparent, oklch(0.13 0.04 260) 95%);
+  --shadow-elegant: 0 30px 80px -20px oklch(0 0 0 / 70%);
   --shadow-glow: 0 0 60px -10px oklch(0.86 0.09 90 / 35%);
 }
 
