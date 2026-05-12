@@ -107,6 +107,34 @@ function Home() {
         </div>
       </section>
 
+      {/* GALLERY */}
+      <section className="border-y border-border py-24 md:py-32">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 mb-12 flex items-end justify-between">
+          <div>
+            <div className="eyebrow mb-4">Uit het atelier</div>
+            <h2 className="font-display text-4xl md:text-6xl text-cream">Een greep uit ons werk.</h2>
+          </div>
+        </div>
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 grid grid-cols-2 md:grid-cols-4 gap-px bg-border">
+          {[
+            { src: galVintage, alt: "Vooraanzicht klassieke wagen", span: "col-span-2 row-span-2 aspect-square md:aspect-auto" },
+            { src: galPorsche, alt: "Porsche stuur en interieur", span: "aspect-[3/4]" },
+            { src: galWheel, alt: "BMW BBS velg", span: "aspect-[3/4]" },
+            { src: galTractor, alt: "Allgaier oldtimer tractor", span: "aspect-[3/4]" },
+            { src: galBus, alt: "Volkswagen T2 camper", span: "aspect-[3/4]" },
+          ].map((g, i) => (
+            <div key={i} className={`overflow-hidden bg-background ${g.span}`}>
+              <img
+                src={g.src}
+                alt={g.alt}
+                loading="lazy"
+                className="w-full h-full object-cover grayscale hover:grayscale-0 hover:scale-105 transition-all duration-[1200ms] ease-out"
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* MANIFESTO */}
       <section className="relative py-32 md:py-48 border-y border-border overflow-hidden">
         <div className="absolute inset-0 grain opacity-50" />
