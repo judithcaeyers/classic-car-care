@@ -1,4 +1,5 @@
 import { useEffect, useState, type ReactNode } from "react";
+import { createPortal } from "react-dom";
 import { z } from "zod";
 
 const schema = z.object({
@@ -105,7 +106,8 @@ function AppointmentDialog({ open, onClose }: { open: boolean; onClose: () => vo
     }, 400);
   };
 
-  return (
+  if (typeof document === "undefined") return null;
+  return createPortal((
     <div
       role="dialog"
       aria-modal="true"
@@ -212,7 +214,7 @@ function AppointmentDialog({ open, onClose }: { open: boolean; onClose: () => vo
         )}
       </div>
     </div>
-  );
+  ), document.body);
 }
 
 function Field({
