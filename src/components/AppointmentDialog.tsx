@@ -214,7 +214,7 @@ function AppointmentDialog({ open, onClose }: { open: boolean; onClose: () => vo
         )}
       </div>
     </div>
-  );
+  ), document.body);
 }
 
 function Field({
