@@ -1,14 +1,12 @@
 import { Link } from "@tanstack/react-router";
+import logo from "@/assets/drs-logo.png";
 
 export function SiteFooter() {
   return (
     <footer className="border-t border-border mt-32">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-20 grid md:grid-cols-12 gap-12">
         <div className="md:col-span-5">
-          <div className="flex items-baseline gap-2">
-            <span className="font-display text-3xl text-cream">DRS</span>
-            <span className="eyebrow">Classics</span>
-          </div>
+          <img src={logo} alt="DRS Classics" width={120} height={120} className="h-20 w-auto" />
           <p className="mt-6 text-muted-foreground max-w-sm text-pretty">
             Onderhoud, herstelling en restauratie voor wie de schoonheid van een
             oldtimer kan appreciëren. Vakmanschap dat blijft.
