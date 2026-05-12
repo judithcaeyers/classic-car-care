@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import logo from "@/assets/drs-logo.png";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -26,9 +27,8 @@ export function SiteHeader() {
       }`}
     >
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-5 flex items-center justify-between">
-        <Link to="/" className="flex items-baseline gap-2 group" onClick={() => setOpen(false)}>
-          <span className="font-display text-2xl tracking-tight text-cream">DRS</span>
-          <span className="eyebrow text-brass">Classics</span>
+        <Link to="/" className="flex items-center gap-3 group" onClick={() => setOpen(false)} aria-label="DRS Classics — Home">
+          <img src={logo} alt="DRS Classics" width={48} height={48} className="h-10 w-auto md:h-12" />
         </Link>
 
         <nav className="hidden md:flex items-center gap-10">
