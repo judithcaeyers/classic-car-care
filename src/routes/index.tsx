@@ -10,6 +10,7 @@ import galVintage from "@/assets/gallery-vintage-front.jpg";
 import galWheel from "@/assets/gallery-bmw-wheel.jpg";
 import galBus from "@/assets/gallery-vw-bus.jpg";
 import { Lightbox } from "@/components/Lightbox";
+import { AppointmentTrigger } from "@/components/AppointmentDialog";
 
 export const Route = createFileRoute("/")({
   component: Home,
