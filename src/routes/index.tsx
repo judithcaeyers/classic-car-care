@@ -3,6 +3,11 @@ import heroImg from "@/assets/hero-garage.jpg";
 import mechImg from "@/assets/service-mechanic.jpg";
 import bodyImg from "@/assets/service-body.jpg";
 import restoImg from "@/assets/service-restoration.jpg";
+import galPorsche from "@/assets/gallery-porsche-interior.jpg";
+import galTractor from "@/assets/gallery-tractor.jpg";
+import galVintage from "@/assets/gallery-vintage-front.jpg";
+import galWheel from "@/assets/gallery-bmw-wheel.jpg";
+import galBus from "@/assets/gallery-vw-bus.jpg";
 
 export const Route = createFileRoute("/")({
   component: Home,
