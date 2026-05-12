@@ -21,7 +21,24 @@ const services = [
   { n: "03", title: "Restauratie van Oldtimers", desc: "Volledige restauraties met respect voor het origineel en oog voor detail.", img: restoImg, href: "/diensten" as const },
 ];
 
+const galleryImages = [
+  { src: galVintage, alt: "Vooraanzicht klassieke wagen" },
+  { src: galPorsche, alt: "Porsche stuur en interieur" },
+  { src: galWheel, alt: "BMW BBS velg" },
+  { src: galTractor, alt: "Allgaier oldtimer tractor" },
+  { src: galBus, alt: "Volkswagen T2 camper" },
+];
+const gallerySpans = [
+  "col-span-2 row-span-2 aspect-square md:aspect-auto",
+  "aspect-[3/4]",
+  "aspect-[3/4]",
+  "aspect-[3/4]",
+  "aspect-[3/4]",
+];
+
 function Home() {
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
   return (
     <>
       {/* HERO */}
