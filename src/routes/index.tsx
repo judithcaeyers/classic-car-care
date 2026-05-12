@@ -135,24 +135,36 @@ function Home() {
           </div>
         </div>
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 grid grid-cols-2 md:grid-cols-4 gap-px bg-border">
-          {[
-            { src: galVintage, alt: "Vooraanzicht klassieke wagen", span: "col-span-2 row-span-2 aspect-square md:aspect-auto" },
-            { src: galPorsche, alt: "Porsche stuur en interieur", span: "aspect-[3/4]" },
-            { src: galWheel, alt: "BMW BBS velg", span: "aspect-[3/4]" },
-            { src: galTractor, alt: "Allgaier oldtimer tractor", span: "aspect-[3/4]" },
-            { src: galBus, alt: "Volkswagen T2 camper", span: "aspect-[3/4]" },
-          ].map((g, i) => (
-            <div key={i} className={`overflow-hidden bg-background ${g.span}`}>
+          {galleryImages.map((g, i) => (
+            <button
+              type="button"
+              key={i}
+              onClick={() => setLightboxIndex(i)}
+              aria-label={`Vergroot foto: ${g.alt}`}
+              className={`group overflow-hidden bg-background ${gallerySpans[i]} cursor-zoom-in relative`}
+            >
               <img
                 src={g.src}
                 alt={g.alt}
                 loading="lazy"
-                className="w-full h-full object-cover grayscale hover:grayscale-0 hover:scale-105 transition-all duration-[1200ms] ease-out"
+                className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[1200ms] ease-out"
               />
-            </div>
+              <span className="absolute bottom-3 right-3 w-9 h-9 rounded-full border border-cream/30 bg-background/40 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-cream">
+                  <path d="M12 5v14M5 12h14" />
+                </svg>
+              </span>
+            </button>
           ))}
         </div>
       </section>
+
+      <Lightbox
+        images={galleryImages}
+        index={lightboxIndex}
+        onClose={() => setLightboxIndex(null)}
+        onIndexChange={setLightboxIndex}
+      />
 
       {/* MANIFESTO */}
       <section className="relative py-32 md:py-48 border-y border-border overflow-hidden">
