@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import heroImg from "@/assets/hero-garage.jpg";
 import mechImg from "@/assets/service-mechanic.jpg";
@@ -8,6 +9,7 @@ import galTractor from "@/assets/gallery-tractor.jpg";
 import galVintage from "@/assets/gallery-vintage-front.jpg";
 import galWheel from "@/assets/gallery-bmw-wheel.jpg";
 import galBus from "@/assets/gallery-vw-bus.jpg";
+import { Lightbox } from "@/components/Lightbox";
 
 export const Route = createFileRoute("/")({
   component: Home,
