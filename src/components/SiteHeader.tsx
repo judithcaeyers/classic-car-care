@@ -46,9 +46,9 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <Link to="/contact" className="hidden md:inline-flex btn-ghost py-2.5 px-4 text-[0.65rem]">
+        <AppointmentTrigger className="hidden md:inline-flex btn-ghost py-2.5 px-4 text-[0.65rem]">
           Maak afspraak
-        </Link>
+        </AppointmentTrigger>
 
         <button
           aria-label="Menu"
