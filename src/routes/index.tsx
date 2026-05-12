@@ -10,6 +10,7 @@ import galVintage from "@/assets/gallery-vintage-front.jpg";
 import galWheel from "@/assets/gallery-bmw-wheel.jpg";
 import galBus from "@/assets/gallery-vw-bus.jpg";
 import { Lightbox } from "@/components/Lightbox";
+import { AppointmentTrigger } from "@/components/AppointmentDialog";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -60,7 +61,7 @@ function Home() {
           </h1>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 sm:items-center">
             <Link to="/diensten" className="btn-brass">Ontdek onze diensten →</Link>
-            <Link to="/contact" className="btn-ghost">Maak een afspraak</Link>
+            <AppointmentTrigger className="btn-ghost">Maak een afspraak</AppointmentTrigger>
           </div>
         </div>
 
