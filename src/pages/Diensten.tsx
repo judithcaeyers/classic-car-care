@@ -17,7 +17,7 @@ const items = [
     title: "Carrosserie & Spuitwerk",
     img: bodyImg,
     desc: "Geen kleurverschillen op de deuren. Geen restjes roest in de kofferbak. Carrosseriewerk waar we trots op zijn — afgewerkt zoals een klassieker het verdient.",
-    bullets: ["Plaatwerk & lasreparaties", "Volledig spuitwerk in moffeloven", "Kleur op kleur of volledige overspuiting", "Polish & afwerking"],
+    bullets: ["Plaatwerk & lasreparaties", "Volledig spuitwerk", "Kleur op kleur of volledige overspuiting", "Polish & afwerking"],
   },
   {
     n: "03",
