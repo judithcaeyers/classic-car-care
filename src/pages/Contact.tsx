@@ -1,14 +1,14 @@
-import { Helmet } from "react-helmet-async";
+import { usePageMeta } from "@/hooks/use-page-meta";
 
 export default function Contact() {
+  usePageMeta({
+    title: "Contact — DRS Classics · Sint-Pieters-Leeuw",
+    description: "Contacteer DRS Classics voor onderhoud, herstelling of restauratie. Mekingenweg 122, 1600 Sint-Pieters-Leeuw — +32 499 70 58 70.",
+    ogTitle: "Contact · DRS Classics",
+    ogDescription: "Bel, mail of kom langs in het atelier.",
+  });
   return (
     <>
-      <Helmet>
-        <title>Contact — DRS Classics · Sint-Pieters-Leeuw</title>
-        <meta name="description" content="Contacteer DRS Classics voor onderhoud, herstelling of restauratie. Mekingenweg 122, 1600 Sint-Pieters-Leeuw — +32 499 70 58 70." />
-        <meta property="og:title" content="Contact · DRS Classics" />
-        <meta property="og:description" content="Bel, mail of kom langs in het atelier." />
-      </Helmet>
 
       <section className="pt-40 pb-16 md:pt-48 max-w-[1400px] mx-auto px-6 md:px-12">
         <div className="eyebrow mb-6">Contact</div>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import { usePageMeta } from "@/hooks/use-page-meta";
 import heroImg from "@/assets/hero-garage.jpg";
 import mechImg from "@/assets/service-mechanic.jpg";
 import bodyImg from "@/assets/service-body.jpg";
@@ -37,14 +37,15 @@ const gallerySpans = [
 export default function Home() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
+  usePageMeta({
+    title: "DRS Classics — Garage & Oldtimer Restauratie · Sint-Pieters-Leeuw",
+    description: "Onderhoud, herstelling, carrosserie en restauratie van auto's en oldtimers. Vakmanschap met oog voor detail in Sint-Pieters-Leeuw.",
+    ogTitle: "DRS Classics — Garage & Oldtimer Restauratie",
+    ogDescription: "Vakmanschap voor auto's en oldtimers. Mekingenweg 122, Sint-Pieters-Leeuw.",
+  });
+
   return (
     <>
-      <Helmet>
-        <title>DRS Classics — Garage & Oldtimer Restauratie · Sint-Pieters-Leeuw</title>
-        <meta name="description" content="Onderhoud, herstelling, carrosserie en restauratie van auto's en oldtimers. Vakmanschap met oog voor detail in Sint-Pieters-Leeuw." />
-        <meta property="og:title" content="DRS Classics — Garage & Oldtimer Restauratie" />
-        <meta property="og:description" content="Vakmanschap voor auto's en oldtimers. Mekingenweg 122, Sint-Pieters-Leeuw." />
-      </Helmet>
 
       {/* HERO */}
       <section className="relative min-h-screen flex items-end overflow-hidden">
