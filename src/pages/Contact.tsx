@@ -1,20 +1,15 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Helmet } from "react-helmet-async";
 
-export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact — DRS Classics · Sint-Pieters-Leeuw" },
-      { name: "description", content: "Contacteer DRS Classics voor onderhoud, herstelling of restauratie. Mekingenweg 122, 1600 Sint-Pieters-Leeuw — +32 499 70 58 70." },
-      { property: "og:title", content: "Contact · DRS Classics" },
-      { property: "og:description", content: "Bel, mail of kom langs in het atelier." },
-    ],
-  }),
-  component: Contact,
-});
-
-function Contact() {
+export default function Contact() {
   return (
     <>
+      <Helmet>
+        <title>Contact — DRS Classics · Sint-Pieters-Leeuw</title>
+        <meta name="description" content="Contacteer DRS Classics voor onderhoud, herstelling of restauratie. Mekingenweg 122, 1600 Sint-Pieters-Leeuw — +32 499 70 58 70." />
+        <meta property="og:title" content="Contact · DRS Classics" />
+        <meta property="og:description" content="Bel, mail of kom langs in het atelier." />
+      </Helmet>
+
       <section className="pt-40 pb-16 md:pt-48 max-w-[1400px] mx-auto px-6 md:px-12">
         <div className="eyebrow mb-6">Contact</div>
         <h1 className="font-display text-6xl md:text-8xl text-cream text-balance max-w-4xl">
@@ -24,7 +19,6 @@ function Contact() {
 
       <section className="max-w-[1400px] mx-auto px-6 md:px-12 py-20">
         <div className="grid md:grid-cols-12 gap-16">
-          {/* Info */}
           <div className="md:col-span-5 space-y-12">
             <div>
               <div className="eyebrow mb-4">Atelier</div>
@@ -66,7 +60,6 @@ function Contact() {
             </div>
           </div>
 
-          {/* Form */}
           <div className="md:col-span-7">
             <form
               className="space-y-8 bg-card border border-border p-8 md:p-12"
@@ -89,9 +82,7 @@ function Contact() {
               <Field name="car" label="Merk & model" placeholder="Bijv. BMW E30 — 1988" />
               <Field name="message" label="Uw vraag of project" textarea />
 
-              <button type="submit" className="btn-brass w-full justify-center">
-                Bericht versturen →
-              </button>
+              <button type="submit" className="btn-brass w-full justify-center">Bericht versturen →</button>
               <p className="text-xs text-muted-foreground text-center font-mono">
                 Wij contacteren u binnen 1 à 2 werkdagen.
               </p>

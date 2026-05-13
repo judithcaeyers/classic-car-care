@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import heroImg from "@/assets/hero-garage.jpg";
 import mechImg from "@/assets/service-mechanic.jpg";
 import bodyImg from "@/assets/service-body.jpg";
@@ -12,14 +13,10 @@ import galBus from "@/assets/gallery-vw-bus.jpg";
 import { Lightbox } from "@/components/Lightbox";
 import { AppointmentTrigger } from "@/components/AppointmentDialog";
 
-export const Route = createFileRoute("/")({
-  component: Home,
-});
-
 const services = [
-  { n: "01", title: "Onderhoud & Herstelling", desc: "Voor moderne wagens én oldtimers. Betrouwbaar werk, eerlijk advies.", img: mechImg, href: "/diensten" as const },
-  { n: "02", title: "Carrosserie & Spuitwerk", desc: "Een carrosserie die blinkt — want elke oldtimer verdient het.", img: bodyImg, href: "/diensten" as const },
-  { n: "03", title: "Restauratie van Oldtimers", desc: "Volledige restauraties met respect voor het origineel en oog voor detail.", img: restoImg, href: "/diensten" as const },
+  { n: "01", title: "Onderhoud & Herstelling", desc: "Voor moderne wagens én oldtimers. Betrouwbaar werk, eerlijk advies.", img: mechImg, href: "/diensten" },
+  { n: "02", title: "Carrosserie & Spuitwerk", desc: "Een carrosserie die blinkt — want elke oldtimer verdient het.", img: bodyImg, href: "/diensten" },
+  { n: "03", title: "Restauratie van Oldtimers", desc: "Volledige restauraties met respect voor het origineel en oog voor detail.", img: restoImg, href: "/diensten" },
 ];
 
 const galleryImages = [
@@ -37,20 +34,21 @@ const gallerySpans = [
   "aspect-[3/4]",
 ];
 
-function Home() {
+export default function Home() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   return (
     <>
+      <Helmet>
+        <title>DRS Classics — Garage & Oldtimer Restauratie · Sint-Pieters-Leeuw</title>
+        <meta name="description" content="Onderhoud, herstelling, carrosserie en restauratie van auto's en oldtimers. Vakmanschap met oog voor detail in Sint-Pieters-Leeuw." />
+        <meta property="og:title" content="DRS Classics — Garage & Oldtimer Restauratie" />
+        <meta property="og:description" content="Vakmanschap voor auto's en oldtimers. Mekingenweg 122, Sint-Pieters-Leeuw." />
+      </Helmet>
+
       {/* HERO */}
       <section className="relative min-h-screen flex items-end overflow-hidden">
-        <img
-          src={heroImg}
-          alt="Klassieke BMW E30 in het atelier van DRS Classics"
-          width={1920}
-          height={1080}
-          className="absolute inset-0 w-full h-full object-cover"
-        />
+        <img src={heroImg} alt="Klassieke BMW E30 in het atelier van DRS Classics" width={1920} height={1080} className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/30 to-background" />
         <div className="absolute inset-0 grain" />
 
@@ -65,9 +63,7 @@ function Home() {
           </div>
         </div>
 
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 font-mono text-[0.65rem] tracking-[0.4em] text-muted-foreground uppercase animate-pulse">
-          Scroll
-        </div>
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 font-mono text-[0.65rem] tracking-[0.4em] text-muted-foreground uppercase animate-pulse">Scroll</div>
       </section>
 
       {/* INTRO */}
@@ -91,27 +87,14 @@ function Home() {
             <div className="eyebrow mb-4">Drie pijlers</div>
             <h2 className="font-display text-5xl md:text-6xl text-cream">Onze expertise</h2>
           </div>
-          <Link to="/diensten" className="hidden md:inline-block text-xs uppercase tracking-[0.22em] text-brass hover:underline underline-offset-8">
-            Alle diensten →
-          </Link>
+          <Link to="/diensten" className="hidden md:inline-block text-xs uppercase tracking-[0.22em] text-brass hover:underline underline-offset-8">Alle diensten →</Link>
         </div>
 
         <div className="grid md:grid-cols-3 gap-px bg-border">
           {services.map((s) => (
-            <Link
-              key={s.n}
-              to={s.href}
-              className="group relative bg-background p-8 md:p-10 flex flex-col gap-6 hover:bg-card transition-colors duration-500"
-            >
+            <Link key={s.n} to={s.href} className="group relative bg-background p-8 md:p-10 flex flex-col gap-6 hover:bg-card transition-colors duration-500">
               <div className="aspect-[4/3] overflow-hidden">
-                <img
-                  src={s.img}
-                  alt={s.title}
-                  loading="lazy"
-                  width={1280}
-                  height={960}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[1200ms] ease-out"
-                />
+                <img src={s.img} alt={s.title} loading="lazy" width={1280} height={960} className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[1200ms] ease-out" />
               </div>
               <div className="flex items-baseline gap-4">
                 <span className="font-mono text-xs text-brass">{s.n}</span>
@@ -119,9 +102,7 @@ function Home() {
               </div>
               <h3 className="font-display text-3xl text-cream">{s.title}</h3>
               <p className="text-muted-foreground text-pretty">{s.desc}</p>
-              <span className="text-xs uppercase tracking-[0.22em] text-brass mt-2 inline-flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                Lees meer →
-              </span>
+              <span className="text-xs uppercase tracking-[0.22em] text-brass mt-2 inline-flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">Lees meer →</span>
             </Link>
           ))}
         </div>
@@ -137,19 +118,8 @@ function Home() {
         </div>
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 grid grid-cols-2 md:grid-cols-4 gap-px bg-border">
           {galleryImages.map((g, i) => (
-            <button
-              type="button"
-              key={i}
-              onClick={() => setLightboxIndex(i)}
-              aria-label={`Vergroot foto: ${g.alt}`}
-              className={`group overflow-hidden bg-background ${gallerySpans[i]} cursor-zoom-in relative`}
-            >
-              <img
-                src={g.src}
-                alt={g.alt}
-                loading="lazy"
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[1200ms] ease-out"
-              />
+            <button type="button" key={i} onClick={() => setLightboxIndex(i)} aria-label={`Vergroot foto: ${g.alt}`} className={`group overflow-hidden bg-background ${gallerySpans[i]} cursor-zoom-in relative`}>
+              <img src={g.src} alt={g.alt} loading="lazy" className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[1200ms] ease-out" />
               <span className="absolute bottom-3 right-3 w-9 h-9 rounded-full border border-cream/30 bg-background/40 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-cream">
                   <path d="M12 5v14M5 12h14" />
@@ -160,12 +130,7 @@ function Home() {
         </div>
       </section>
 
-      <Lightbox
-        images={galleryImages}
-        index={lightboxIndex}
-        onClose={() => setLightboxIndex(null)}
-        onIndexChange={setLightboxIndex}
-      />
+      <Lightbox images={galleryImages} index={lightboxIndex} onClose={() => setLightboxIndex(null)} onIndexChange={setLightboxIndex} />
 
       {/* MANIFESTO */}
       <section className="relative py-32 md:py-48 border-y border-border overflow-hidden">
@@ -178,9 +143,7 @@ function Home() {
             <span className="text-brass italic">maar elke oldtimer verdient het om er goed uit te zien."</span>
           </p>
           <div className="hairline w-24 mx-auto mt-12" />
-          <div className="mt-6 font-mono text-xs tracking-[0.3em] uppercase text-muted-foreground">
-            Wouter — DRS Classics
-          </div>
+          <div className="mt-6 font-mono text-xs tracking-[0.3em] uppercase text-muted-foreground">Wouter — DRS Classics</div>
         </div>
       </section>
 
@@ -193,10 +156,7 @@ function Home() {
             </h2>
           </div>
           <div className="md:col-span-5 md:text-right space-y-6">
-            <p className="text-muted-foreground text-lg max-w-md md:ml-auto">
-              Een gesprek begint vaak met een koffie in het atelier. Bel, mail
-              of kom langs.
-            </p>
+            <p className="text-muted-foreground text-lg max-w-md md:ml-auto">Een gesprek begint vaak met een koffie in het atelier. Bel, mail of kom langs.</p>
             <div className="flex flex-wrap md:justify-end gap-4">
               <Link to="/contact" className="btn-brass">Contact opnemen</Link>
             </div>

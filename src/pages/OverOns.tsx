@@ -1,17 +1,6 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import interiorImg from "@/assets/about-interior.jpg";
-
-export const Route = createFileRoute("/over-ons")({
-  head: () => ({
-    meta: [
-      { title: "Over ons — Het verhaal achter DRS Classics" },
-      { name: "description", content: "Hoe een passie voor oldtimers uitgroeide tot DRS Classics. Lees het verhaal van Wouter en de mensen achter het atelier." },
-      { property: "og:title", content: "Over ons · DRS Classics" },
-      { property: "og:description", content: "Een jonge garage met een hart voor klassiekers." },
-    ],
-  }),
-  component: Over,
-});
 
 const timeline = [
   { year: "Studies", text: "Wouter twijfelt tussen ingenieur en autotechnologie. Het wordt Sint-Katelijne-Waver — en al snel zijn eerste oldtimer." },
@@ -26,9 +15,16 @@ const values = [
   { t: "Passie als drijfveer", d: "We doen dit omdat we van auto's houden. Dat voel je in elk detail." },
 ];
 
-function Over() {
+export default function OverOns() {
   return (
     <>
+      <Helmet>
+        <title>Over ons — Het verhaal achter DRS Classics</title>
+        <meta name="description" content="Hoe een passie voor oldtimers uitgroeide tot DRS Classics. Lees het verhaal van Wouter en de mensen achter het atelier." />
+        <meta property="og:title" content="Over ons · DRS Classics" />
+        <meta property="og:description" content="Een jonge garage met een hart voor klassiekers." />
+      </Helmet>
+
       <section className="pt-40 pb-20 md:pt-48 md:pb-28 max-w-[1400px] mx-auto px-6 md:px-12">
         <div className="eyebrow mb-6">Over ons</div>
         <h1 className="font-display text-6xl md:text-8xl text-cream text-balance max-w-4xl">
@@ -40,14 +36,7 @@ function Over() {
       <section className="max-w-[1400px] mx-auto px-6 md:px-12 pb-32">
         <div className="grid md:grid-cols-12 gap-12 items-start">
           <div className="md:col-span-5 md:sticky md:top-32">
-            <img
-              src={interiorImg}
-              alt="Interieur van een klassieke wagen"
-              loading="lazy"
-              width={1280}
-              height={1600}
-              className="w-full"
-            />
+            <img src={interiorImg} alt="Interieur van een klassieke wagen" loading="lazy" width={1280} height={1600} className="w-full" />
           </div>
           <div className="md:col-span-7 space-y-12">
             <p className="font-display text-2xl md:text-3xl leading-relaxed text-cream text-pretty">
@@ -62,9 +51,7 @@ function Over() {
                   <div className="col-span-3 md:col-span-2">
                     <div className="font-mono text-xs uppercase tracking-[0.2em] text-brass">{t.year}</div>
                   </div>
-                  <div className="col-span-9 md:col-span-10 text-muted-foreground text-pretty border-l border-border pl-6">
-                    {t.text}
-                  </div>
+                  <div className="col-span-9 md:col-span-10 text-muted-foreground text-pretty border-l border-border pl-6">{t.text}</div>
                 </div>
               ))}
             </div>
