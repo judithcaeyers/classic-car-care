@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import { usePageMeta } from "@/hooks/use-page-meta";
 import interiorImg from "@/assets/about-interior.jpg";
 
 const timeline = [
@@ -16,14 +16,14 @@ const values = [
 ];
 
 export default function OverOns() {
+  usePageMeta({
+    title: "Over ons — Het verhaal achter DRS Classics",
+    description: "Hoe een passie voor oldtimers uitgroeide tot DRS Classics. Lees het verhaal van Wouter en de mensen achter het atelier.",
+    ogTitle: "Over ons · DRS Classics",
+    ogDescription: "Een jonge garage met een hart voor klassiekers.",
+  });
   return (
     <>
-      <Helmet>
-        <title>Over ons — Het verhaal achter DRS Classics</title>
-        <meta name="description" content="Hoe een passie voor oldtimers uitgroeide tot DRS Classics. Lees het verhaal van Wouter en de mensen achter het atelier." />
-        <meta property="og:title" content="Over ons · DRS Classics" />
-        <meta property="og:description" content="Een jonge garage met een hart voor klassiekers." />
-      </Helmet>
 
       <section className="pt-40 pb-20 md:pt-48 md:pb-28 max-w-[1400px] mx-auto px-6 md:px-12">
         <div className="eyebrow mb-6">Over ons</div>

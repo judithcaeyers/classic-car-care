@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import { usePageMeta } from "@/hooks/use-page-meta";
 import mechImg from "@/assets/service-mechanic.jpg";
 import bodyImg from "@/assets/service-body.jpg";
 import restoImg from "@/assets/service-restoration.jpg";
@@ -29,14 +29,14 @@ const items = [
 ];
 
 export default function Diensten() {
+  usePageMeta({
+    title: "Diensten — Onderhoud, Carrosserie & Restauratie · DRS Classics",
+    description: "Onderhoud en herstelling, carrosseriewerken en volledige restauratie van auto's en oldtimers in Sint-Pieters-Leeuw.",
+    ogTitle: "Diensten · DRS Classics",
+    ogDescription: "Onderhoud, carrosserie en restauratie voor auto's en oldtimers.",
+  });
   return (
     <>
-      <Helmet>
-        <title>Diensten — Onderhoud, Carrosserie & Restauratie · DRS Classics</title>
-        <meta name="description" content="Onderhoud en herstelling, carrosseriewerken en volledige restauratie van auto's en oldtimers in Sint-Pieters-Leeuw." />
-        <meta property="og:title" content="Diensten · DRS Classics" />
-        <meta property="og:description" content="Onderhoud, carrosserie en restauratie voor auto's en oldtimers." />
-      </Helmet>
 
       <section className="pt-40 pb-20 md:pt-48 md:pb-28 max-w-[1400px] mx-auto px-6 md:px-12">
         <div className="eyebrow mb-6">Diensten</div>
