@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import logo from "@/assets/drs-logo.png";
 import { AppointmentTrigger } from "@/components/AppointmentDialog";
@@ -34,15 +34,18 @@ export function SiteHeader() {
 
         <nav className="hidden md:flex items-center gap-10">
           {nav.map((n) => (
-            <Link
+            <NavLink
               key={n.to}
               to={n.to}
-              className="text-xs uppercase tracking-[0.22em] text-muted-foreground hover:text-brass transition-colors"
-              activeProps={{ className: "text-brass" }}
-              activeOptions={{ exact: true }}
+              end
+              className={({ isActive }) =>
+                `text-xs uppercase tracking-[0.22em] transition-colors ${
+                  isActive ? "text-brass" : "text-muted-foreground hover:text-brass"
+                }`
+              }
             >
               {n.label}
-            </Link>
+            </NavLink>
           ))}
         </nav>
 
@@ -50,11 +53,7 @@ export function SiteHeader() {
           Maak afspraak
         </AppointmentTrigger>
 
-        <button
-          aria-label="Menu"
-          className="md:hidden text-cream"
-          onClick={() => setOpen((v) => !v)}
-        >
+        <button aria-label="Menu" className="md:hidden text-cream" onClick={() => setOpen((v) => !v)}>
           <div className="w-6 flex flex-col gap-1.5">
             <span className={`h-px bg-current transition-all ${open ? "rotate-45 translate-y-1.5" : ""}`} />
             <span className={`h-px bg-current transition-all ${open ? "opacity-0" : ""}`} />
@@ -67,16 +66,17 @@ export function SiteHeader() {
         <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-md">
           <nav className="flex flex-col px-6 py-6 gap-5">
             {nav.map((n) => (
-              <Link
+              <NavLink
                 key={n.to}
                 to={n.to}
+                end
                 onClick={() => setOpen(false)}
-                className="text-xs uppercase tracking-[0.22em] text-muted-foreground"
-                activeProps={{ className: "text-brass" }}
-                activeOptions={{ exact: true }}
+                className={({ isActive }) =>
+                  `text-xs uppercase tracking-[0.22em] ${isActive ? "text-brass" : "text-muted-foreground"}`
+                }
               >
                 {n.label}
-              </Link>
+              </NavLink>
             ))}
           </nav>
         </div>

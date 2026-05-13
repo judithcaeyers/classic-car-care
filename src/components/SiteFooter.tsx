@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import logo from "@/assets/drs-logo.png";
 
 export function SiteFooter() {
@@ -29,12 +29,8 @@ export function SiteFooter() {
             <div>Mekingenweg 122</div>
             <div>1600 Sint-Pieters-Leeuw</div>
             <div className="pt-3">
-              <a href="tel:+32499705870" className="block hover:text-brass transition-colors">
-                +32 499 70 58 70
-              </a>
-              <a href="mailto:info@drs-classics.be" className="block hover:text-brass transition-colors">
-                info@drs-classics.be
-              </a>
+              <a href="tel:+32499705870" className="block hover:text-brass transition-colors">+32 499 70 58 70</a>
+              <a href="mailto:info@drs-classics.be" className="block hover:text-brass transition-colors">info@drs-classics.be</a>
             </div>
             <div className="pt-3 font-mono text-xs">BE 0795.933.302</div>
           </address>
