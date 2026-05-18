@@ -26,10 +26,10 @@ export function SiteFooter() {
         <div className="md:col-span-4">
           <div className="eyebrow mb-5">Atelier</div>
           <address className="not-italic text-sm space-y-2 text-muted-foreground">
-            <div>Mekingenweg 122</div>
-            <div>1600 Sint-Pieters-Leeuw</div>
+            <div>Noorderstraat 50</div>
+            <div>1502 Lembeek</div>
             <div className="pt-3">
-              <a href="tel:+32499705870" className="block hover:text-brass transition-colors">+32 499 70 58 70</a>
+              <a href="tel:+32478014317" className="block hover:text-brass transition-colors">+32 478 01 43 17</a>
               <a href="mailto:info@drs-classics.be" className="block hover:text-brass transition-colors">info@drs-classics.be</a>
             </div>
             <div className="pt-3 font-mono text-xs">BE 0795.933.302</div>
@@ -39,7 +39,7 @@ export function SiteFooter() {
       <div className="border-t border-border">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-6 flex flex-col md:flex-row justify-between gap-3 text-xs text-muted-foreground font-mono">
           <span>© {new Date().getFullYear()} DRS Classics — Alle rechten voorbehouden</span>
-          <span className="tracking-[0.2em] uppercase">Sint-Pieters-Leeuw · België</span>
+          <span className="tracking-[0.2em] uppercase">Lembeek · België</span>
         </div>
       </div>
     </footer>

@@ -38,10 +38,10 @@ export default function Home() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   usePageMeta({
-    title: "DRS Classics — Garage & Oldtimer Restauratie · Sint-Pieters-Leeuw",
-    description: "Onderhoud, herstelling, carrosserie en restauratie van auto's en oldtimers. Vakmanschap met oog voor detail in Sint-Pieters-Leeuw.",
+    title: "DRS Classics — Garage & Oldtimer Restauratie · Lembeek",
+    description: "Onderhoud, herstelling, carrosserie en restauratie van auto's en oldtimers. Vakmanschap met oog voor detail in Lembeek.",
     ogTitle: "DRS Classics — Garage & Oldtimer Restauratie",
-    ogDescription: "Vakmanschap voor auto's en oldtimers. Mekingenweg 122, Sint-Pieters-Leeuw.",
+    ogDescription: "Vakmanschap voor auto's en oldtimers. Noorderstraat 50, Lembeek.",
   });
 
   return (
@@ -54,7 +54,7 @@ export default function Home() {
         <div className="absolute inset-0 grain" />
 
         <div className="relative max-w-[1400px] mx-auto px-6 md:px-12 pb-24 md:pb-32 pt-40 w-full">
-          <div className="eyebrow mb-6">Est. 2024 · Sint-Pieters-Leeuw</div>
+          <div className="eyebrow mb-6">Est. 2024 · Lembeek</div>
           <h1 className="font-display text-[14vw] md:text-[7.5rem] leading-[0.9] text-cream text-balance max-w-5xl">
             Vakmanschap voor wie van <em className="text-brass not-italic">auto's</em> houdt.
           </h1>
