@@ -1,7 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import logo from "@/assets/drs-logo.png";
-import { AppointmentTrigger } from "@/components/AppointmentDialog";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -49,9 +48,6 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <AppointmentTrigger className="hidden md:inline-flex btn-ghost py-2.5 px-4 text-[0.65rem]">
-          Maak afspraak
-        </AppointmentTrigger>
 
         <button aria-label="Menu" className="md:hidden text-cream" onClick={() => setOpen((v) => !v)}>
           <div className="w-6 flex flex-col gap-1.5">

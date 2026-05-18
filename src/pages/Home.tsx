@@ -11,7 +11,7 @@ import galVintage from "@/assets/gallery-vintage-front.jpg";
 import galWheel from "@/assets/gallery-bmw-wheel.jpg";
 import galBus from "@/assets/gallery-vw-bus.jpg";
 import { Lightbox } from "@/components/Lightbox";
-import { AppointmentTrigger } from "@/components/AppointmentDialog";
+
 
 const services = [
   { n: "01", title: "Onderhoud & Herstelling", desc: "Voor moderne wagens én oldtimers. Betrouwbaar werk, eerlijk advies.", img: mechImg, href: "/diensten" },
@@ -58,9 +58,8 @@ export default function Home() {
           <h1 className="font-display text-[14vw] md:text-[7.5rem] leading-[0.9] text-cream text-balance max-w-5xl">
             Vakmanschap voor wie van <em className="text-brass not-italic">auto's</em> houdt.
           </h1>
-          <div className="mt-10 flex flex-col sm:flex-row gap-4 sm:items-center">
+          <div className="mt-10">
             <Link to="/diensten" className="btn-brass">Ontdek onze diensten →</Link>
-            <AppointmentTrigger className="btn-ghost">Maak een afspraak</AppointmentTrigger>
           </div>
         </div>
 

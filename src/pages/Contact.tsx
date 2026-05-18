@@ -61,32 +61,17 @@ export default function Contact() {
           </div>
 
           <div className="md:col-span-7">
-            <form
-              className="space-y-8 bg-card border border-border p-8 md:p-12"
-              onSubmit={(e) => {
-                e.preventDefault();
-                const form = e.currentTarget;
-                const data = new FormData(form);
-                const subject = encodeURIComponent(`Aanvraag — ${data.get("name")}`);
-                const body = encodeURIComponent(
-                  `Naam: ${data.get("name")}\nTelefoon: ${data.get("phone")}\nWagen: ${data.get("car")}\n\n${data.get("message")}`
-                );
-                window.location.href = `mailto:info@drs-classics.be?subject=${subject}&body=${body}`;
-              }}
-            >
-              <div className="grid md:grid-cols-2 gap-6">
-                <Field name="name" label="Uw naam" required />
-                <Field name="phone" label="Telefoon" type="tel" />
+            <div className="space-y-8 bg-card border border-border p-8 md:p-12">
+              <div>
+                <div className="eyebrow mb-4">E-mail ons</div>
+                <a href="mailto:info@drs-classics.be" className="font-display text-3xl text-cream hover:text-brass transition-colors">
+                  info@drs-classics.be
+                </a>
+                <p className="text-muted-foreground mt-4 max-w-md">
+                  Stuur ons gerust een mail met uw vraag of project. Wij lezen en beantwoorden persoonlijk binnen 1 à 2 werkdagen.
+                </p>
               </div>
-              <Field name="email" label="E-mail" type="email" required />
-              <Field name="car" label="Merk & model" placeholder="Bijv. BMW E30 — 1988" />
-              <Field name="message" label="Uw vraag of project" textarea />
-
-              <button type="submit" className="btn-brass w-full justify-center">Bericht versturen →</button>
-              <p className="text-xs text-muted-foreground text-center font-mono">
-                Wij contacteren u binnen 1 à 2 werkdagen.
-              </p>
-            </form>
+            </div>
           </div>
         </div>
       </section>
@@ -94,31 +79,3 @@ export default function Contact() {
   );
 }
 
-function Field({
-  name,
-  label,
-  type = "text",
-  required,
-  placeholder,
-  textarea,
-}: {
-  name: string;
-  label: string;
-  type?: string;
-  required?: boolean;
-  placeholder?: string;
-  textarea?: boolean;
-}) {
-  const cls =
-    "w-full bg-transparent border-0 border-b border-border focus:border-brass outline-none py-3 text-cream placeholder:text-muted-foreground/60 transition-colors";
-  return (
-    <label className="block">
-      <span className="eyebrow block mb-2">{label}{required && <span className="text-accent"> *</span>}</span>
-      {textarea ? (
-        <textarea name={name} rows={5} required={required} placeholder={placeholder} className={cls} />
-      ) : (
-        <input name={name} type={type} required={required} placeholder={placeholder} className={cls} />
-      )}
-    </label>
-  );
-}
