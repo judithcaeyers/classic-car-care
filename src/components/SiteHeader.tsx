@@ -1,7 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import logo from "@/assets/drs-logo.png";
-import { AppointmentTrigger } from "@/components/AppointmentDialog";
 
 const nav = [
   { to: "/", label: "Home" },
