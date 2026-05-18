@@ -2,8 +2,8 @@ import { usePageMeta } from "@/hooks/use-page-meta";
 
 export default function Contact() {
   usePageMeta({
-    title: "Contact — DRS Classics · Sint-Pieters-Leeuw",
-    description: "Contacteer DRS Classics voor onderhoud, herstelling of restauratie. Mekingenweg 122, 1600 Sint-Pieters-Leeuw — +32 499 70 58 70.",
+    title: "Contact — DRS Classics · Lembeek",
+    description: "Contacteer DRS Classics voor onderhoud, herstelling of restauratie. Noorderstraat 50, 1502 Lembeek — +32 478 01 43 17.",
     ogTitle: "Contact · DRS Classics",
     ogDescription: "Bel, mail of kom langs in het atelier.",
   });
@@ -23,8 +23,8 @@ export default function Contact() {
             <div>
               <div className="eyebrow mb-4">Atelier</div>
               <p className="font-display text-2xl text-cream leading-snug">
-                Mekingenweg 122<br />
-                1600 Sint-Pieters-Leeuw<br />
+                Noorderstraat 50<br />
+                1502 Lembeek<br />
                 België
               </p>
             </div>
@@ -33,8 +33,8 @@ export default function Contact() {
 
             <div>
               <div className="eyebrow mb-4">Direct contact</div>
-              <a href="tel:+32499705870" className="block font-display text-3xl text-cream hover:text-brass transition-colors">
-                +32 499 70 58 70
+              <a href="tel:+32478014317" className="block font-display text-3xl text-cream hover:text-brass transition-colors">
+                +32 478 01 43 17
               </a>
               <a href="mailto:info@drs-classics.be" className="block font-display text-2xl text-cream hover:text-brass transition-colors mt-2">
                 info@drs-classics.be

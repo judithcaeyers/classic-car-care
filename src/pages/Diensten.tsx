@@ -31,7 +31,7 @@ const items = [
 export default function Diensten() {
   usePageMeta({
     title: "Diensten — Onderhoud, Carrosserie & Restauratie · DRS Classics",
-    description: "Onderhoud en herstelling, carrosseriewerken en volledige restauratie van auto's en oldtimers in Sint-Pieters-Leeuw.",
+    description: "Onderhoud en herstelling, carrosseriewerken en volledige restauratie van auto's en oldtimers in Lembeek.",
     ogTitle: "Diensten · DRS Classics",
     ogDescription: "Onderhoud, carrosserie en restauratie voor auto's en oldtimers.",
   });
