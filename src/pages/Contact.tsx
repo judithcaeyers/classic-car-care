@@ -79,31 +79,3 @@ export default function Contact() {
   );
 }
 
-function Field({
-  name,
-  label,
-  type = "text",
-  required,
-  placeholder,
-  textarea,
-}: {
-  name: string;
-  label: string;
-  type?: string;
-  required?: boolean;
-  placeholder?: string;
-  textarea?: boolean;
-}) {
-  const cls =
-    "w-full bg-transparent border-0 border-b border-border focus:border-brass outline-none py-3 text-cream placeholder:text-muted-foreground/60 transition-colors";
-  return (
-    <label className="block">
-      <span className="eyebrow block mb-2">{label}{required && <span className="text-accent"> *</span>}</span>
-      {textarea ? (
-        <textarea name={name} rows={5} required={required} placeholder={placeholder} className={cls} />
-      ) : (
-        <input name={name} type={type} required={required} placeholder={placeholder} className={cls} />
-      )}
-    </label>
-  );
-}
