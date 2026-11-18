@@ -39,6 +39,7 @@ export function SiteFooter() {
       <div className="border-t border-border">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-6 flex flex-col md:flex-row justify-between gap-3 text-xs text-muted-foreground font-mono">
           <span>© {new Date().getFullYear()} DRS Classics — Alle rechten voorbehouden</span>
+          <a href="https://rhoandsigma.com" className="w-fit hover:text-brass transition-colors">Website door Rho &amp; Sigma</a>
           <span className="tracking-[0.2em] uppercase">Lembeek · België</span>
         </div>
       </div>
